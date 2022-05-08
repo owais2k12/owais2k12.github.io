@@ -6,19 +6,21 @@ subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Moto. Etc.
 
 profile:
   align: right
-  image: prof_pic.jpg
-  address: >
-    <p>555 your office number</p>
-    <p>123 your address street</p>
-    <p>Your City, State 12345</p>
+  image: mypic.jpg
+  address: Beijing, CHINA
 
 news: true  # includes a list of news items
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
 
-Put your address / P.O. box / other info right below your picture. You can also disable any these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+Hi! I am Owais, a practical Engineer who enjoy solving complex problems and loves to work in a challenging environment that can help him exploit his dedicated and creative working potential. 
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](http://fortawesome.github.io/Font-Awesome/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+
+Currently, I am working in CARIAD, Car Software Organization under the hood of Volkswagen Group in the domain of Autonomous Driving for the purpose of driving a safe and efficient future. In past several years, I have contributed/lead projects in the areas of High Computing Platforms (HCPs), Perception (Computer Vision, Machine/Deep Learning,  Active Stereo Vision, Sensor Fusion and 3D Reconstruction) and control systems. 
+
+How do I spend my free time?? Again, solving problems :)
+
+Checkout my accomplishments !!!
+
