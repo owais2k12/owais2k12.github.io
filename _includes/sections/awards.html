@@ -1,0 +1,23 @@
+<div class="row">
+    <div class="col-lg-12 text-center">
+        <h2>Awards & Achievements</h2>
+        <hr class="star-primary">
+    </div>
+</div>
+<div class="row">
+    {% for award in site.data.projects %}
+    <div class="col-sm-4">
+        <div class="award-item">
+            <div class="award-image">
+                <img src="{{ award.img | relative_url }}" class="img-responsive" alt="{{ award.name }}">
+            </div>
+            <div class="award-caption">
+                <h4><i class="fa {{ award.icon }}"></i> {{ award.name }}</h4>
+                <p class="award-organization">{{ award.organization }}</p>
+                <p class="award-type">{{ award.award_type }}</p>
+                <p class="award-desc">{{ award.desc }}</p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>

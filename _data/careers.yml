@@ -1,97 +1,168 @@
 - name:
     detail: Software Project Lead @ CARIAD SE (Volkswagen Group)
-    i18n: cariad
+    i18n: cariad_se
   desc:
-    detail: Leading development of interior and exterior perception systems for driver and occupant monitoring across VW Group platforms. Defining perception architecture and roadmaps, integrating deep learning models for gaze tracking, occupant classification, and behavior recognition.
-    i18n: cariad_des
+    detail: |
+      System Architect Interior Cabin Monitoring System:
+      • Led development and deployment of interior perception systems for driver and occupant monitoring across VW Group platforms
+      • Defined perception architecture and roadmaps, integrating deep learning models for gaze tracking, occupant classification
+      • Designed end-to-end pipelines for sensor data processing and neural network inference
+      • Architected scalable middleware for cross-platform deployment
+      
+      System Lead – Multi-Function Camera System:
+      • Led end-to-end development of intelligent Multi-Function Camera system
+      • Owned cross-domain system release coordination
+      • Managed milestone delivery aligned with BMG/DET targets
+    i18n: cariad_se_desc
   date:
     detail: Aug 2022 - Present
-    i18n: cariad_date
+    i18n: cariad_se_date
   job:
     detail: Senior System Lead ADAS/HAD Solutions
-    i18n: cariad_job
+    i18n: cariad_se_job
   icon: fa-car
 
 - name:
-    detail: Data scientist & Project Manager @ Saint-Gobain Research Paris.
-    i18n: re
+    detail: Project Lead @ Mobility Asia (CARIAD CN)
+    i18n: cariad_cn
   desc:
-    detail: From April 2018 to 2022. Developing AI solutions in context of R&D projects.
-    i18n: re_des
+    detail: |
+      • Program Management - Led ECU development programs, managing SW/HW release cycles
+      • Requirements Engineering - Defined system requirements for ADAS Domain Controllers
+      • Hardware Development - Directed ECU hardware interfaces and design reviews
+      • Software Development - Oversaw AUTOSAR CP/AP base software development
+      • Testing & Integration - Managed validation activities and supplier test campaigns
+    i18n: cariad_cn_desc
   date:
-    detail: April. 2018 - March. 2022
-    i18n: re_date
+    detail: Jan 2021 - Jul 2022
+    i18n: cariad_cn_date
   job:
-    detail: Research Engineer & Project Manager
-    i18n: re_job
-  icon: fa-search
+    detail: Project Lead ADAP Computation Architecture
+    i18n: cariad_cn_job
+  icon: fa-microchip
 
 - name:
-    detail: Post-doc at UBFC, Le2i laboratory
-    i18n: postdoc
+    detail: System Development Engineer @ VCIC (Audi/VW Group)
+    i18n: vcic
   desc:
-    detail: From March 2016 to March 2018, I was a post-doc in UBFC, Le2i laboratory, working on ANR VIPeR project.
-    i18n: postdoc_des
+    detail: |
+      • Defined system and ECU-level requirements for Top View and Advanced Parking features
+      • Coordinated stakeholder inputs across system architecture teams
+      • Led integration of new communication signals for ADAS Domain Controller
+    i18n: vcic_desc
   date:
-    detail: March. 2016 - March. 2018
-    i18n: postdoc_date
+    detail: Jun 2020 - Dec 2020
+    i18n: vcic_date
   job:
-    detail: Post-doc
-    i18n: potdoc_job
-  icon: fa-search
+    detail: System Development Engineer – ADAS L2++ Programs
+    i18n: vcic_job
+  icon: fa-cogs
 
 - name:
-    detail: Joint PhD at UdG-UBFC
-    i18n: phd
+    detail: Perception Algorithm Engineer @ HiRain Technologies
+    i18n: hirain
   desc:
-    detail: In June 2016, I graduated from a joint PhD from the Universitat de Girona and the Universite de Bourgogne France-Comte. My thesis was entitled "An approach to Melanoma Classification Exploiting Polarization Information".
-    i18n: phd_des
+    detail: |
+      • Developed TopView system with multi-camera setup and calibration
+      • Built deep learning pipeline for semantic segmentation
+      • Designed DNN for free space detection and indoor localization
+      • Created traffic light distance estimation algorithm
+      • Integrated multi-object tracking systems
+    i18n: hirain_desc
   date:
-    detail: Aug. 2012 - Jun. 2016
-    i18n: phd_date
+    detail: Jul 2018 - May 2020
+    i18n: hirain_date
   job:
-    detail: PhD candidate
-    i18n: phd_job
-  icon: fa-search
+    detail: Perception Algorithm Engineer
+    i18n: hirain_job
+  icon: fa-eye
 
 - name:
-    detail: Barcelona Digital
-    i18n: bd
+    detail: Graduate Research Assistant @ Beijing Advanced Innovation Center
+    i18n: baic
   desc:
-    detail: From September 2011 to June 2012, I was researcher at Barcelona Digital focusing on classification and data mining tools for European project Brainable.
-    i18n: bd_des
+    detail: |
+      • Developed online calibration for 9-DOF stereo vision system
+      • Created CNN for UAV landing marker detection
+      • Designed multi-modal sensor fusion system for autonomous vehicles
+    i18n: baic_desc
   date:
-    detail: Sep. 2011 - Jun. 2012
-    i18n: bd_date
+    detail: Sep 2016 - Jun 2018
+    i18n: baic_date
   job:
-    detail: Intern researcher
-    i18n: bd_job
-  icon: fa-search
+    detail: Graduate Research Assistant
+    i18n: baic_job
+  icon: fa-graduation-cap
 
 - name:
-    detail: Erasmus Mundus MSc in Vision and Robotics (Vibot) at HWU-UdG-UBFC
-    i18n: vibot
+    detail: Research Engineer @ Virtual Reality & Driving Simulation Lab
+    i18n: vr_lab
   desc:
-    detail: In September 2011, I graduated from a Master in Vision and Robotics. My final thesis was entitled "Change Detection in Epiluminescent Microscopy for Early Detection of Skin Cancer".
-    i18n: vibot_des
+    detail: |
+      • Developed 6DOF SUV driving simulator with real-time rendering
+      • Integrated VR system with motion platform for high-fidelity simulation
+    i18n: vr_lab_desc
   date:
-    detail: Sep. 2009 - Sep. 2011
-    i18n: vibot_date
+    detail: Oct 2015 - Jul 2016
+    i18n: vr_lab_date
   job:
-    detail: MSc student candidate
-    i18n: vibot_job
-  icon: fa-book
+    detail: Research Engineer
+    i18n: vr_lab_job
+  icon: fa-vr-cardboard
+
+# Education Section
+- name:
+    detail: Adaptive Strategic Execution Program @ Duke University
+    i18n: duke
+  desc:
+    detail: Hybrid program focusing on strategic execution in technology leadership
+    i18n: duke_desc
+  date:
+    detail: Sep 2022 - Jul 2023
+    i18n: duke_date
+  job:
+    detail: Executive Education
+    i18n: duke_job
+  icon: fa-university
 
 - name:
-    detail: Bachelor of Electrical and Electronics Engineering, University Teknologi PETRONAS
-    i18n: EE, UTP
+    detail: Self Driving Car Specialization @ University of Toronto
+    i18n: toronto
   desc:
-    detail: In 2005 I obtained PETRONAS scholarship to study EE.Eng in UTP and four years after, in June 2009, I obtained my bachelor among Hounor class.
-    i18n: utp_des
+    detail: Online specialization in autonomous driving systems and technology
+    i18n: toronto_desc
   date:
-    detail: Sep. 2005 - June. 2009
-    i18n: utp_date
+    detail: Jul 2020 - Sep 2020
+    i18n: toronto_date
   job:
-    detail: Bsc student candidate
-    i18n: utp_job
-  icon: fa-book
+    detail: Professional Certification
+    i18n: toronto_job
+  icon: fa-car-side
+
+- name:
+    detail: M.Sc. in Mechanical Engineering @ Beijing Institute of Technology
+    i18n: bit
+  desc:
+    detail: Specialized in Computer Vision & Robotics with focus on perception systems
+    i18n: bit_desc
+  date:
+    detail: Sep 2016 - Jun 2018
+    i18n: bit_date
+  job:
+    detail: Master's Degree
+    i18n: bit_job
+  icon: fa-graduation-cap
+
+- name:
+    detail: B.Sc. in Electrical Engineering @ UET Taxila
+    i18n: uet
+  desc:
+    detail: Major in Electronics & Microelectronics
+    i18n: uet_desc
+  date:
+    detail: Aug 2012 - Jun 2016
+    i18n: uet_date
+  job:
+    detail: Bachelor's Degree
+    i18n: uet_job
+  icon: fa-university

@@ -1,21 +1,28 @@
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <p>&copy; {{ site.time | date: '%Y' }} {{ site.author.name }}. All rights reserved.</p>
+                <div class="social-links">
+                    {% if site.author.linkedin_username %}
+                    <a href="https://www.linkedin.com/in/{{ site.author.linkedin_username }}" target="_blank">
+                        <i class="fa fa-linkedin"></i>
+                    </a>
+                    {% endif %}
+                    <a href="mailto:{{ site.author.email }}">
+                        <i class="fa fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Scripts -->
 <script src="{{ "static/js/scroll.js" | prepend: site.baseurl }}"></script>
 
-<!-- Baidu analytics -->
-{% if site.ba %}
-  <script>
-      var _hmt = _hmt || [];
-      (function() {
-        var hm = document.createElement("script");
-        hm.src = "//hm.baidu.com/hm.js?{{ site.ba.uuid }}";
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(hm, s);
-      })();
-  </script>
-{% endif %}
-
-<!-- Google analytics -->
 {% if site.ga %}
-  <script>
+<script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -23,41 +30,5 @@
 
     ga('create', '{{ site.ga.id }}', 'auto');
     ga('send', 'pageview');
-
-  </script>
-{% endif %}
-
-{% if site.disqus %}
-  <script type="text/javascript">
-    var disqusShortName = "{{ site.disqus.name }}";
-
-    var disqusPublicKey = "{{ site.disqus.public_key }}";
-
-    var urlArray = [];
-    $('.disqus-comment-count').each(function () {
-      var url = $(this).attr('data-disqus-url');
-      urlArray.push('link:' + url);
-    });
-    $.ajax({
-      type: 'GET',
-      url: "https://disqus.com/api/3.0/threads/set.jsonp",
-      data: { api_key: disqusPublicKey, forum : disqusShortName, thread : urlArray },
-      cache: false,
-      dataType: "jsonp",
-      success: function (result) {
-        for (var i in result.response) {
-          var count = result.response[i].posts;
-          if ( count ) {
-            $('.disqus-comment-count[data-disqus-url="' + result.response[i].link + '"]').html(count);
-          }
-        }
-      }
-    });
 </script>
 {% endif %}
-
-{% if site.changyan %}
-  <script id="cy_cmt_num" src="http://changyan.sohu.com/upload/plugins/plugins.list.count.js?clientId=cysfY7ULn"></script>
-{% endif %}
-
-<script async src="{{ "static/js/count_page.js" | prepend: site.baseurl }}"></script>

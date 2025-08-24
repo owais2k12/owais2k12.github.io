@@ -4,9 +4,8 @@
 title: "Hafiz Muhammad Owais"
 description: "Senior System Lead ADAS/HAD Solutions"
 keywords: "ADAS, autonomous driving, system architecture, perception systems, automotive, deep learning, computer vision"
-baseurl: "/"
-url: "http://owais2k12.github.io"
-# url: "http://127.0.0.1:4000"
+baseurl: ""
+url: "https://owais2k12.github.io"
 
 # author
 author:
@@ -57,40 +56,10 @@ sections:
 languages:
   - locale: 'en'
     flag: 'static/img/flags/United-States.png'
-  # - locale: 'zh'
-  #   flag: 'static/img/flags/China.png'
 
-# blog img path
-img_path: 'http://www.jack003.com/static/img/blog'
-
-# donate
-donate:
-  wechat: 'static/img/pay/wechat.png'
-  alipay: 'static/img/pay/alipay.png'
-
-# comment
-changyan:
-  # appid: cysfY7ULn
-  # conf: prod_861928934cecb7a18e15bedaed9dae29
-disqus:
-  # name: jalpc
-  # public_key: tj2MPaNlHMONwTH5bGDNSXyaBpW7q282MeUzh5CwcjJerNhK8Kxk3aWo7IckzTX7
-
-# share
-bshare:
-  # uuid: 513f778e-a8f7-4c20-9ec2-d29cc2328d75
-
-# baidu analytics
-ba:
-  # uuid: 317acca9ef9255b934e46371e471431d
-
-# google analytics
+# analytics (optional)
 ga:
-  # id: UA-73784599-1
-
-# growingIO
-gio:
-  # id: a49d4901c7853da9
+  id: '' # Add your Google Analytics ID here if needed
 
 # Build settings
 encoding: "utf-8"
