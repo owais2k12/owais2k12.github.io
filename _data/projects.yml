@@ -1,6 +1,6 @@
 - name: 'Smart Mobility Challenge Winner'
   i18n: 'honda_hackathon'
-  img: 'static/img/awards/honda_hackathon.jpg'
+  img: 'static/img/awards/honda_hackathon.JPG'
   desc: 'Winner of Honda Smart Mobility Hackathon, developing innovative solutions for future mobility challenges.'
   organization: 'Honda'
   award_type: 'First Place'
@@ -8,7 +8,7 @@
 
 - name: 'First/Last Mile Innovation Challenge'
   i18n: 'skoda_challenge'
-  img: 'static/img/awards/skoda_challenge.jpg'
+  img: 'static/img/awards/skoda_challenge.JPG'
   desc: 'Won Skoda''s Innovative First/Last Mile Challenge by developing unique solutions for urban mobility connectivity.'
   organization: 'Skoda'
   award_type: 'Winner'
@@ -16,7 +16,7 @@
 
 - name: 'Automated Valet Parking Challenge'
   i18n: 'bosch_avp'
-  img: 'static/img/awards/bosch_avp.jpg'
+  img: 'static/img/awards/bosch_avp.JPG'
   desc: 'First place in Bosch''s Automated Valet Parking Challenge, developing advanced autonomous parking solutions.'
   organization: 'Bosch'
   award_type: 'Winner'
@@ -24,7 +24,7 @@
 
 - name: 'Call For Code Challenge'
   i18n: 'angelhack_ibm'
-  img: 'static/img/awards/angelhack_ibm.jpg'
+  img: 'static/img/awards/angelhack_ibm.JPG'
   desc: 'Winner of Angelhack Call For Code Challenge, creating innovative solutions using IBM technologies.'
   organization: 'Angelhack/IBM'
   award_type: 'Winner'
@@ -32,7 +32,7 @@
 
 - name: 'International Robotics Challenge'
   i18n: 'mbzirc'
-  img: 'static/img/awards/mbzirc.jpg'
+  img: 'static/img/awards/mbzirc.JPG'
   desc: 'Winner of the MBZIRC International Robotics Challenge, demonstrating excellence in autonomous robotics systems.'
   organization: 'MBZIRC'
   award_type: 'First Place'
@@ -40,7 +40,7 @@
 
 - name: 'Graduate Scholarship'
   i18n: 'cgs_scholarship'
-  img: 'static/img/awards/cgs_scholarship.jpg'
+  img: 'static/img/awards/cgs_scholarship.JPG'
   desc: 'Awarded prestigious CGS Graduate Scholarship for academic excellence and research potential.'
   organization: 'CGS'
   award_type: 'Awardee'
@@ -48,7 +48,7 @@
 
 - name: 'MENA Scholarship'
   i18n: 'coca_cola_scholarship'
-  img: 'static/img/awards/coca_cola_scholarship.jpg'
+  img: 'static/img/awards/coca_cola_scholarship.JPG'
   desc: 'Finalist in the competitive Coca Cola MENA Scholarship program.'
   organization: 'USEFP'
   award_type: 'Finalist'
