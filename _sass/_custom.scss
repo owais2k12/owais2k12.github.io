@@ -10,6 +10,38 @@
     --award-gold: #FFD700;
 }
 
+// Project/Award image styles
+.team-member {
+    margin-bottom: 30px;
+    text-align: center;
+    
+    .img-small {
+        width: 250px;  /* Increased from default size */
+        height: 250px; /* Keeping it square */
+        margin: 0 auto 20px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        object-fit: cover;
+        border: 3px solid #fff;
+    }
+    
+    &:hover .img-small {
+        transform: scale(1.05);
+        box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    }
+
+    h4 {
+        margin-top: 20px;
+        margin-bottom: 10px;
+        font-size: 18px;
+    }
+
+    p {
+        margin: 10px 0;
+        color: #666;
+    }
+}
+
 // Awards section styles
 .award-item {
     margin-bottom: 30px;
