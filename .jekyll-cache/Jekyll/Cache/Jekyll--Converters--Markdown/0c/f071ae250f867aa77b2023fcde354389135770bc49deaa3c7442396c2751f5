@@ -1,0 +1,86 @@
+I"�<p>memcached服务安装：</p>
+
+<p>源码包：memcached-1.4.21.tar.gz</p>
+
+<p>依赖包：libevent-2.0.20-stable.tar.gz</p>
+
+<p>libevent是memcached的基本库</p>
+
+<p>安装首先编译安装libevent，要求为安装三部曲</p>
+
+<p>安装memcached在configure时，若需要安装多个memcached，增加路径参数即可：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./configure –prefix=/usr/local/mem1/
+</code></pre></div></div>
+
+<p>启动方式：</p>
+
+<p>在bin目录下</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./memcached -d -c 4096 -m 512 -u root -p 11212
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p>-d表示以后台守护进程方式启动</p>
+  </li>
+  <li>
+    <p>-c表示最大连接数</p>
+  </li>
+  <li>
+    <p>-m表示使用内存大小，单位为M</p>
+  </li>
+  <li>
+    <p>-u表示以root用户启动</p>
+  </li>
+  <li>
+    <p>-p表示监听端口号</p>
+  </li>
+</ul>
+
+<p>安装memcache时，需要建立文件索引或者说文件连接（link），类似windows下的快捷方式</p>
+
+<p>启动服务时出现 <strong>error while loading shared libraries: libevent-2.0.so.5: cannot open shared object file: No such file or directory</strong></p>
+
+<p>解决办法：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>whereis libevent-2.0.so.5
+</code></pre></div></div>
+
+<p>libevent-2.0.so.5: /usr/local/lib/libevent-2.0.so.5</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ldd /usr/local/bin/memcached （ldd指令不熟悉的去查看下）
+</code></pre></div></div>
+
+<p>libevent-2.0.so.5 =&gt; not found （没有找到该文件）</p>
+
+<p>libpthread.so.0 =&gt; /lib64/libpthread.so.0 (0x00002b83fce0e000)</p>
+
+<p>libc.so.6 =&gt; /lib64/libc.so.6 (0x00002b83fd029000)</p>
+
+<p>librt.so.1 =&gt; /lib64/librt.so.1 (0x00002b83fd381000)</p>
+
+<p>/lib64/ld-linux-x86-64.so.2 (0x00002b83fc9b0000)</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>LD_DEBUG=libs ./memcached -v
+</code></pre></div></div>
+
+<p>LD_DEBUG=libs /usr/local/mem1/bin/memcached -v
+找到默认路径 /usr/lib/</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo ln -s /usr/lib/libevent-2.0.so.5 /usr/lib64/libevent-2.0.so.5
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo ldd /usr/local/bin/memcached
+</code></pre></div></div>
+
+<p>libevent-2.0.so.5 =&gt; /usr/lib64/libevent-2.0.so.5 (0x00002b83fcbcd000)</p>
+
+<p>libpthread.so.0 =&gt; /lib64/libpthread.so.0 (0x00002b83fce0e000)</p>
+
+<p>libc.so.6 =&gt; /lib64/libc.so.6 (0x00002b83fd029000)</p>
+
+<p>librt.so.1 =&gt; /lib64/librt.so.1 (0x00002b83fd381000)</p>
+
+<p>/lib64/ld-linux-x86-64.so.2 (0x00002b83fc9b0000)</p>
+:ET

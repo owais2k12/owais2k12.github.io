@@ -1,0 +1,76 @@
+I"�<h4 id="函数设计">①函数设计</h4>
+
+<ol>
+  <li>
+    <p>函数设计尽量短小，嵌套层次不宜过深(3层)。</p>
+  </li>
+  <li>
+    <p>函数申明赢合理、简单、易使用，参数不宜过多。</p>
+  </li>
+  <li>
+    <p>函数设计应考虑乡下兼容，使用需求变更和版本升级。</p>
+  </li>
+  <li>
+    <p>一个函数只做一件事情。</p>
+  </li>
+</ol>
+
+<h4 id="将常量集中到一个文件">②将常量集中到一个文件</h4>
+
+<p>将存放常量的文件命名为constant.py，并在其中定义一些列常量：</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">_const</span><span class="p">:</span>
+    <span class="k">class</span> <span class="nc">ConstError</span><span class="p">(</span><span class="nb">TypeError</span><span class="p">):</span> <span class="k">pass</span>
+    <span class="k">class</span> <span class="nc">ConstCaseError</span><span class="p">(</span><span class="n">ConstError</span><span class="p">):</span> <span class="k">pass</span>
+    
+    <span class="k">def</span> <span class="nf">__setattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="p">.</span><span class="n">__dict__</span><span class="p">.</span><span class="n">has_key</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="bp">self</span><span class="p">.</span><span class="n">ConstError</span><span class="p">,</span> <span class="s">"Can't change const.%s"</span> <span class="o">%</span> <span class="n">name</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">name</span><span class="p">.</span><span class="n">isupper</span><span class="p">():</span>
+            <span class="k">raise</span> <span class="bp">self</span><span class="p">.</span><span class="n">ConstCaseError</span><span class="p">,</span> <span class="s">'const name "%s" is not all uppercase'</span> <span class="o">%</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">__dict__</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+        
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">sys</span><span class="p">.</span><span class="n">modules</span><span class="p">[</span><span class="n">__name__</span><span class="p">]</span><span class="o">=</span><span class="n">_const</span><span class="p">()</span>
+<span class="kn">import</span> <span class="nn">const</span>
+<span class="n">const</span><span class="p">.</span><span class="n">MY_NAME</span> <span class="o">=</span> <span class="s">'JACK'</span>
+<span class="p">...</span>
+</code></pre></div></div>
+
+<p>当在其他模块中引用这些常量时，按照如下方式进行即可：</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">constant</span> <span class="kn">import</span> <span class="n">const</span>
+<span class="k">print</span> <span class="n">const</span><span class="p">.</span><span class="n">MY_NAME</span>
+</code></pre></div></div>
+
+<h4 id="数据交换不推荐使用中间变量">③数据交换不推荐使用中间变量</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; temp = x
+&gt;&gt;&gt; x = y
+&gt;&gt;&gt; t = temp
+</code></pre></div></div>
+
+<p>替换为：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; x,y = y,x
+</code></pre></div></div>
+
+<h4 id="充分利用lazy-evaluation的特性">④充分利用Lazy evaluation的特性</h4>
+
+<p>Lazy evaluation为”延迟计算”或”惰性计算”，Python中最典型的就是生成器表达式了。</p>
+
+<h4 id="不推荐使用type进行类型检查">⑤不推荐使用type进行类型检查</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; import types
+&gt;&gt;&gt; string = 'abc'
+&gt;&gt;&gt; type(string) = types.StringType
+True
+</code></pre></div></div>
+
+<p>替换为：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; string = 'abc'
+&gt;&gt;&gt; isinstance(string, str)
+True
+</code></pre></div></div>
+:ET

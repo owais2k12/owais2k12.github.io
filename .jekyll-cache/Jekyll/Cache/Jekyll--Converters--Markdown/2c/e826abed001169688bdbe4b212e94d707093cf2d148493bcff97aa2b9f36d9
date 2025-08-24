@@ -1,0 +1,76 @@
+I"�<p>花了一个星期，把hadoop整套算是搞通了，做这套hadoop是给bi做数据分析使用的，之前他们是用MySQL cluster来做数据查询，MySQL cluster的好处是数据全部加载到内存中，查询会非常快，不足的地方是数据容量受限，内存多大，数据最多能放多少，所以我们新建设了一套hadoop集群。</p>
+
+<p>搭建hadoop集群，我们使用的<a href="http://ambari.apache.org/">ambari</a>组建，这套组建能够让你自由的组织和扩容hadoop集群，官网地址为：http://ambari.apache.org/ ，我安装了最新版本2.2.0。</p>
+
+<p>安装过程网上很多，这里给出我的安装清单：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Admin Name : admin 
+Cluster Name : BI_hadoop 
+Total Hosts : 5 (5 new) 
+Repositories:
+ debian7 (HDP-2.3):
+  http://public-repo-1.hortonworks.com/HDP/debian7/2.x/updates/2.3.4.0
+ debian7 (HDP-UTILS-1.1.0.20):
+  http://public-repo-1.hortonworks.com/HDP-UTILS-1.1.0.20/repos/debian6
+ redhat6 (HDP-2.3):
+  http://public-repo-1.hortonworks.com/HDP/centos6/2.x/updates/2.3.4.0
+ redhat6 (HDP-UTILS-1.1.0.20):
+  http://public-repo-1.hortonworks.com/HDP-UTILS-1.1.0.20/repos/centos6
+ redhat7 (HDP-2.3):
+  http://public-repo-1.hortonworks.com/HDP/centos7/2.x/updates/2.3.4.0
+ redhat7 (HDP-UTILS-1.1.0.20):
+  http://public-repo-1.hortonworks.com/HDP-UTILS-1.1.0.20/repos/centos7
+ suse11 (HDP-2.3):
+  http://public-repo-1.hortonworks.com/HDP/suse11sp3/2.x/updates/2.3.4.0
+ suse11 (HDP-UTILS-1.1.0.20):
+  http://public-repo-1.hortonworks.com/HDP-UTILS-1.1.0.20/repos/suse11sp3
+ ubuntu12 (HDP-2.3):
+  http://public-repo-1.hortonworks.com/HDP/ubuntu12/2.x/updates/2.3.4.0
+ ubuntu12 (HDP-UTILS-1.1.0.20):
+  http://public-repo-1.hortonworks.com/HDP-UTILS-1.1.0.20/repos/ubuntu12
+ ubuntu14 (HDP-2.3):
+  http://public-repo-1.hortonworks.com/HDP/ubuntu14/2.x/updates/2.3.4.0
+ ubuntu14 (HDP-UTILS-1.1.0.20):
+  http://public-repo-1.hortonworks.com/HDP-UTILS-1.1.0.20/repos/ubuntu12
+
+Services:
+HDFS
+  DataNode : 3 hosts 
+  NameNode :hadoop1 
+  NFSGateway : 0 
+  host SNameNode :hadoop1
+YARN + MapReduce2
+  App Timeline Server :hadoop1 
+  NodeManager : 3 hosts 
+  ResourceManager :hadoop1
+Tez
+ Clients : 3 hosts
+Hive
+  Metastore : hadoop1
+  HiveServer2 : ambari
+  WebHCat Server : ambari
+  Database : MySQL (New MySQL Database)
+Pig
+  Clients : 3 hosts 
+Sqoop
+  Clients : 3 hosts 
+ZooKeeper
+  Server : ambari 
+Ambari Metrics
+  Metrics Collector : ambari 
+Spark
+  History Server : ambari 
+  Thrift Server : 0 host
+</code></pre></div></div>
+
+<p>ambari主页面如下：</p>
+
+<p><img src="http://www.jack003.com/static/img/blog/hadoop_ambari/ambari.png" alt="amabri" /></p>
+
+<p>hadoop的各项配置可以按照ambari给的参考配置设定，在web端即可实现hive接口查询数据：</p>
+
+<p><img src="http://www.jack003.com/static/img/blog/hadoop_ambari/hive-web.png" alt="amabri" /></p>
+
+<p>数据录入我们是通过MySQL的select into outfile到txt文件，然后在hive中load到hadoop中，中间遇到一些坑，是MySQL一些字段的换行符，这个问题查看一下我的上一篇文章，在hive创建数据库表中，text字段可以用string替代，*int(*)换成*int即可。</p>
+
+:ET

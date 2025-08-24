@@ -1,0 +1,12 @@
+I"[<p>方法一：</p>
+
+<p>在MySQL的data目录下查看，前提是my.cnf中配置了innodb_file_per_table</p>
+
+<p>方法二：</p>
+
+<p>在MySQL查询中执行以下操作：</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">select</span> <span class="k">table_name</span><span class="p">,</span><span class="n">concat</span><span class="p">(</span><span class="n">round</span><span class="p">(</span><span class="n">data_length</span><span class="o">/</span><span class="mi">1000</span><span class="o">/</span><span class="mi">1000</span><span class="o">/</span><span class="mi">1000</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span><span class="s1">'GB'</span><span class="p">)</span> <span class="k">as</span> <span class="n">data_length_GB</span> 
+<span class="k">from</span> <span class="n">information_schema</span><span class="p">.</span><span class="n">tables</span> <span class="k">ORDER</span> <span class="k">BY</span> <span class="n">data_length_GB</span><span class="p">;</span>
+</code></pre></div></div>
+:ET

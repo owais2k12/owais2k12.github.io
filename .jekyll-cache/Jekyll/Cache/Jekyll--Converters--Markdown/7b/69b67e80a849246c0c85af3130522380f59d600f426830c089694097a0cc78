@@ -1,0 +1,58 @@
+I"�<p>在jquery中处理JSON数组的情况中遍历用到的比较多，但是用添加移除这些好像不是太多。
+今天试过json[i].remove(),json.remove(i)之后都不行，看网页的DOM对象中好像JSON数据是以数组的形式出现的，查阅了下相关JS中数组的操作一试果然很爽。
+记录下来。</p>
+
+<h2 id="数组的创建">数组的创建</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">arrayObj</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">();</span>  <span class="c1">//创建一个数组</span>
+<span class="kd">var</span> <span class="nx">arrayObj</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">([</span><span class="nx">size</span><span class="p">]);</span>  <span class="c1">//创建一个数组并指定长度，注意不是上限，是长度</span>
+<span class="kd">var</span> <span class="nx">arrayObj</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">([</span><span class="nx">element0</span><span class="p">[,</span> <span class="nx">element1</span><span class="p">[,</span> <span class="p">...[,</span> <span class="nx">elementN</span><span class="p">]]]]);</span>  <span class="c1">//创建一个数组并赋值</span>
+</code></pre></div></div>
+
+<p>要说明的是，虽然第二种方法创建数组指定了长度，但实际上所有情况下数组都是变长的，也就是说即使指定了长度为5，仍然可以将元素存储在规定长度以外的，注意：这时长度会随之改变。</p>
+
+<h2 id="数组的元素的访问">数组的元素的访问</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">testGetArrValue</span><span class="o">=</span><span class="nx">arrayObj</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span> <span class="c1">//获取数组的元素值</span>
+<span class="nx">arrayObj</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span> <span class="dl">"</span><span class="s2">这是新值</span><span class="dl">"</span><span class="p">;</span> <span class="c1">//给数组元素赋予新的值</span>
+</code></pre></div></div>
+
+<h2 id="数组元素的添加">数组元素的添加</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">arrayObj</span><span class="p">.</span> <span class="nx">push</span><span class="p">([</span><span class="nx">item1</span> <span class="p">[</span><span class="nx">item2</span> <span class="p">[.</span> <span class="p">.</span> <span class="p">.</span> <span class="p">[</span><span class="nx">itemN</span> <span class="p">]]]]);</span><span class="c1">// 将一个或多个新元素添加到数组结尾，并返回数组新长度</span>
+<span class="nx">arrayObj</span><span class="p">.</span><span class="nx">unshift</span><span class="p">([</span><span class="nx">item1</span> <span class="p">[</span><span class="nx">item2</span> <span class="p">[.</span> <span class="p">.</span> <span class="p">.</span> <span class="p">[</span><span class="nx">itemN</span> <span class="p">]]]]);</span><span class="c1">// 将一个或多个新元素添加到数组开始，数组中的元素自动后移，返回数组新长度</span>
+<span class="nx">arrayObj</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="nx">insertPos</span><span class="p">,</span><span class="mi">0</span><span class="p">,[</span><span class="nx">item1</span><span class="p">[,</span> <span class="nx">item2</span><span class="p">[,</span> <span class="p">.</span> <span class="p">.</span> <span class="p">.</span> <span class="p">[,</span><span class="nx">itemN</span><span class="p">]]]]);</span><span class="c1">//将一个或多个新元素插入到数组的指定位置，插入位置的元素自动后移，返回""。</span>
+</code></pre></div></div>
+
+<h2 id="数组元素的删除">数组元素的删除</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">arrayObj</span><span class="p">.</span><span class="nx">pop</span><span class="p">();</span> <span class="c1">//移除最后一个元素并返回该元素值</span>
+<span class="nx">arrayObj</span><span class="p">.</span><span class="nx">shift</span><span class="p">();</span> <span class="c1">//移除最前一个元素并返回该元素值，数组中元素自动前移</span>
+<span class="nx">arrayObj</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="nx">deletePos</span><span class="p">,</span><span class="nx">deleteCount</span><span class="p">);</span> <span class="c1">//删除从指定位置deletePos开始的指定数量deleteCount的元素，数组形式返回所移除的元素</span>
+</code></pre></div></div>
+
+<h2 id="数组的截取和合并">数组的截取和合并</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">arrayObj</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="nx">start</span><span class="p">,</span> <span class="p">[</span><span class="nx">end</span><span class="p">]);</span> <span class="c1">//以数组的形式返回数组的一部分，注意不包括 end 对应的元素，如果省略 end 将复制 start 之后的所有元素</span>
+<span class="nx">arrayObj</span><span class="p">.</span><span class="nx">concat</span><span class="p">([</span><span class="nx">item1</span><span class="p">[,</span> <span class="nx">item2</span><span class="p">[,</span> <span class="p">.</span> <span class="p">.</span> <span class="p">.</span> <span class="p">[,</span><span class="nx">itemN</span><span class="p">]]]]);</span> <span class="c1">//将多个数组（也可以是字符串，或者是数组和字符串的混合）连接为一个数组，返回连接好的新的数组</span>
+</code></pre></div></div>
+
+<h2 id="数组的拷贝">数组的拷贝</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">arrayObj</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span> <span class="c1">//返回数组的拷贝数组，注意是一个新的数组，不是指向</span>
+<span class="nx">arrayObj</span><span class="p">.</span><span class="nx">concat</span><span class="p">();</span> <span class="c1">//返回数组的拷贝数组，注意是一个新的数组，不是指向</span>
+</code></pre></div></div>
+
+<h2 id="数组元素的排序">数组元素的排序</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">arrayObj</span><span class="p">.</span><span class="nx">reverse</span><span class="p">();</span> <span class="c1">//反转元素（最前的排到最后、最后的排到最前），返回数组地址</span>
+<span class="nx">arrayObj</span><span class="p">.</span><span class="nx">sort</span><span class="p">();</span> <span class="c1">//对数组元素排序，返回数组地址</span>
+</code></pre></div></div>
+
+<h2 id="数组元素的字符串化">数组元素的字符串化</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">arrayObj</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="nx">separator</span><span class="p">);</span> <span class="c1">//返回字符串，这个字符串将数组的每一个元素值连接在一起，中间用 separator 隔开。</span>
+</code></pre></div></div>
+
+<p>toLocaleString 、toString 、valueOf：可以看作是join的特殊用法，不常用</p>
+:ET

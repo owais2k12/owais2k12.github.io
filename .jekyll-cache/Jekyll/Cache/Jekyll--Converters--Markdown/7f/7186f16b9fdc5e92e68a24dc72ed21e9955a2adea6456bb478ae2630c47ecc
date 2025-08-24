@@ -1,0 +1,49 @@
+I"�<p>Jekyll自带的分页功能总不是那么全，在<a href="http://jekyll.bootcss.com/docs/pagination/">官方文档</a>中有讲到Jekyll自带分页的使用方法，为了达到更好的分页效果，比如在不同类别的文章下进行分页，就要用别的方法来实现了。</p>
+
+<p>首先，在网上我也找到了很多Jekyll的第三方插件，功能很强大，不过github不允许使用，无奈之下只好另寻他法。因为平时做网站开发想到的都是后端分页的方法，那么在github这个不用考虑性能的网站上，我们为什么不能尝试使用前端分页的方法呢？而且我们的文章也不是非常多，一次得到所有数据再分页未尝不可。就这样，我在网上找到了一些基于jQuery的前端分页插件，使用感觉最好的就是<a href="http://luis-almeida.github.io/jPages/">jPages</a>了。</p>
+
+<p>jPages的文档很详细，每种分页的方法从html、JavaScript到CSS都有源代码，并有展示，这里我讲一下我是怎么用到jekyll中，我使用的是items per page这个example：</p>
+
+<h3 id="step-1">Step 1</h3>
+
+<p>首先需要把jPages.js和js.js引入页面，放在jQuery.js的下面</p>
+
+<h3 id="step-2">Step 2</h3>
+
+<p>然后在<code class="language-plaintext highlighter-rouge">_includes/head.html</code>中加入对应的js：</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+        <span class="nx">$</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+          <span class="cm">/* initiate the plugin */</span>
+          <span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">div.pag-holder</span><span class="dl">"</span><span class="p">).</span><span class="nx">jPages</span><span class="p">({</span>
+              <span class="na">containerID</span>  <span class="p">:</span> <span class="dl">"</span><span class="s2">pag-itemContainer</span><span class="dl">"</span><span class="p">,</span>
+              <span class="na">perPage</span>      <span class="p">:</span> <span class="mi">5</span><span class="p">,</span>  <span class="cm">/* num of items per page */</span>
+              <span class="na">startPage</span>    <span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+              <span class="na">startRange</span>   <span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+              <span class="na">midRange</span>     <span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+              <span class="na">endRange</span>     <span class="p">:</span> <span class="mi">1</span>
+          <span class="p">});</span>
+      <span class="p">});</span>
+  <span class="nt">&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<p>这个js的作用是对<code class="language-plaintext highlighter-rouge">id="pag-holder"</code>的div进行渲染，主要是实现对应的页数和样式，对应的html在<code class="language-plaintext highlighter-rouge">_includes/pagination.html</code>中，注意js中的<code class="language-plaintext highlighter-rouge">containerID</code>，它会找页面中<code class="language-plaintext highlighter-rouge">id=pag-itemContainer</code>的id，对其进行分页，观察得到其实他就是将所有的item包装成<code class="language-plaintext highlighter-rouge">&lt;ul&gt;&lt;li&gt;</code>，然后对每个item进行分页，然后下面就好做了，下面是<code class="language-plaintext highlighter-rouge">python.html</code>中的部分代码：</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>		<span class="nt">&lt;ul</span> <span class="na">id=</span><span class="s">"pag-itemContainer"</span> <span class="na">style=</span><span class="s">"list-style:none;"</span><span class="nt">&gt;</span>
+    {\% assign counter = 0 \%}
+		{\% for post in site.categories['Python'] \%}
+		{\% assign counter = counter | plus: 1 \%}
+		<span class="nt">&lt;li&gt;</span>
+		...
+</code></pre></div></div>
+
+<ul>
+  <li>ps：因为jekyll会对代码中语法检查，我使用”\“进行转义</li>
+</ul>
+
+<p>因为直接使用<code class="language-plaintext highlighter-rouge">&lt;ul&gt;&lt;li&gt;</code>会有一个圆点在每个item之前，使用<code class="language-plaintext highlighter-rouge">style="list-style:none;"</code>即可去除，这里我用了一个计数器，是为了在<code class="language-plaintext highlighter-rouge">_includes/pagination.html</code>中判断文章是否达到分页要求，因为我设置的是<code class="language-plaintext highlighter-rouge">perPage:5</code>，所以我有一个大于5的判断。</p>
+
+<h3 id="step-3">Step 3</h3>
+
+<p>最后一步就是对分页的样式重新定义，因为jPages自带的样式很不好看，我使用的是bootstrap，这里需要在<code class="language-plaintext highlighter-rouge">jPages.js</code>中进行修改，具体可以在我<a href="https://github.com/Jack614/jalpc_jekyll_theme/blob/gh-pages/static/js/jPages.js">项目</a>中的代码查看，有注释的部分是jPages原来的代码。</p>
+:ET

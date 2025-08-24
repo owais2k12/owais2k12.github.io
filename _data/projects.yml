@@ -1,0 +1,24 @@
+- name: 'Interior Perception System'
+  i18n: 'interior_perception'
+  img: 'static/img/projects/interior_perception.jpg'
+  desc: 'Led development of interior monitoring system for VW Group, integrating deep learning for gaze tracking and occupant classification.'
+
+- name: 'ADAP Computation Architecture'
+  i18n: 'adap'
+  img: 'static/img/projects/adap.jpg'
+  desc: 'Managed ECU development program for ADAS Domain Controllers, ensuring compliance with automotive standards.'
+
+- name: 'TopView Camera System'
+  i18n: 'topview'
+  img: 'static/img/projects/topview.jpg'
+  desc: 'Developed multi-camera system with calibration, stitching, and blending capabilities for advanced parking features.'
+
+- name: '6DOF Driving Simulator'
+  i18n: 'simulator'
+  img: 'static/img/projects/simulator.jpg'
+  desc: 'Created high-fidelity driving simulator with VR integration and motion platform for realistic training.'
+
+- name: 'Autonomous UAV Landing'
+  i18n: 'uav'
+  img: 'static/img/projects/uav.jpg'
+  desc: 'Developed CNN-based ellipse detection for precise UAV landing on moving targets.'

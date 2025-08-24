@@ -1,0 +1,101 @@
+# Programming Languages
+- name: Python
+  percentage: 95
+  category: programming
+
+- name: C/C++
+  percentage: 90
+  category: programming
+
+- name: MATLAB
+  percentage: 85
+  category: programming
+
+- name: LaTeX
+  percentage: 80
+  category: programming
+
+# Tools & Platforms
+- name: Jira/Confluence
+  percentage: 95
+  category: tools
+
+- name: Git/Version Control
+  percentage: 90
+  category: tools
+
+- name: Docker
+  percentage: 85
+  category: tools
+
+- name: Bazel
+  percentage: 85
+  category: tools
+
+- name: DOORs/Codebeamer
+  percentage: 90
+  category: tools
+
+# Technical Skills
+- name: ADAS Systems
+  percentage: 95
+  category: technical
+
+- name: Computer Vision
+  percentage: 90
+  category: technical
+
+- name: Deep Learning
+  percentage: 85
+  category: technical
+
+- name: System Architecture
+  percentage: 95
+  category: technical
+
+# Frameworks & Libraries
+- name: ROS
+  percentage: 90
+  category: frameworks
+
+- name: OpenCV
+  percentage: 95
+  category: frameworks
+
+- name: PyTorch
+  percentage: 85
+  category: frameworks
+
+- name: AUTOSAR
+  percentage: 90
+  category: frameworks
+
+# Standards & Methodologies
+- name: ISO 26262
+  percentage: 90
+  category: standards
+
+- name: ASPICE
+  percentage: 85
+  category: standards
+
+- name: Agile/Scrum
+  percentage: 90
+  category: standards
+
+# Languages
+- name: English
+  percentage: 95
+  category: languages
+
+- name: German
+  percentage: 60
+  category: languages
+
+- name: Chinese
+  percentage: 60
+  category: languages
+
+- name: Urdu
+  percentage: 100
+  category: languages

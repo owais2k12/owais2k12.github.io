@@ -1,0 +1,75 @@
+I"�<p>无用户名密码共享文件：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>uid = root  
+gid = root  
+use chroot = no  
+max connections = 100  
+pid file = /var/run/rsyncd.pid  
+lock file = /var/run/rsyncd.cock  
+log file = /var/log/rsync.log  
+list = no  
+strict modes = no  
+
+[rdata]  
+path = /home/rsync_fwg
+read only = yes 
+hosts allow = 192.168.112.243,192.168.104.112,192.168.112.136
+</code></pre></div></div>
+
+<p>使用密码文件进行用户认证共享：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Minimal configuration file for rsync daemon
+# See rsync(1) and rsyncd.conf(5) man pages for help
+
+# This line is required by the /etc/init.d/rsyncd script
+# GLOBAL OPTIONS
+uid = root                         
+gid = root                                  
+use chroot = yes                            
+read only = no                            
+max connections = 50                      
+
+pid file = /var/run/rsyncd.pid             
+
+secrets file = /etc/rsyncd.secrets   
+#lock file = /var/run/rsync.lock           
+
+#This will give you a separate log file
+log file = /var/log/rsync.log               
+
+timeout = 600
+
+# MODULE OPTIONS
+[game]                               
+path = /home/dir/gameantispam/pluguser                       
+#ignore errors                              
+auth users = game                          
+#comment = gameantispam    
+</code></pre></div></div>
+
+<p>/etc/rsyncd.secrets文件：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>game:game
+</code></pre></div></div>
+
+<p>启动rsync：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rsync --daemon --config=/etc/rsyncd.conf --port=8723
+</code></pre></div></div>
+
+<p>远程同步：</p>
+
+<ul>
+  <li>
+    <p>无用户同步：<code class="language-plaintext highlighter-rouge">
+rsync -avR --delete --port=8723 192.168.112.243::rdata/ ./
+</code></p>
+  </li>
+  <li>
+    <p>用户认证同步： <code class="language-plaintext highlighter-rouge">
+rsync -avR --delete --port=8723 dir@123.58.188.133::antiplug/ ./
+</code></p>
+  </li>
+</ul>
+
+:ET

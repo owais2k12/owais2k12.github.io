@@ -1,0 +1,74 @@
+I"=<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/bin/python
+## SQL to Redis
+</span>
+<span class="c1"># import Redis and MySQL drivers
+</span><span class="kn">import</span> <span class="nn">redis</span>
+<span class="kn">import</span> <span class="nn">MySQLdb</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
+
+<span class="c1"># create class
+</span><span class="k">class</span> <span class="nc">dataProcessor</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+	<span class="c1"># Mysql server data
+</span>	<span class="n">MYSQL_IP_ADDRESS_SERVER</span> <span class="o">=</span> <span class="s">'localhost'</span>
+	<span class="n">MYSQL_USER</span> <span class="o">=</span> <span class="s">'root'</span>
+	<span class="n">MYSQL_PASSWORD</span> <span class="o">=</span> <span class="s">'my_strong_password'</span>
+	<span class="n">MYSQL_DATABASE_NAME</span> <span class="o">=</span> <span class="s">'database_name'</span>
+
+	<span class="c1"># Redis server data
+</span>	<span class="n">REDIS_SERVER</span> <span class="o">=</span> <span class="s">'localhost'</span>
+
+	<span class="c1"># function to get data from mysql and to transfer it to redis
+</span>	<span class="o">@</span><span class="nb">staticmethod</span>
+	<span class="k">def</span> <span class="nf">sql_to_redis</span><span class="p">():</span>
+		<span class="n">r_redis</span> <span class="o">=</span> <span class="n">redis</span><span class="p">.</span><span class="n">StrictRedis</span><span class="p">(</span><span class="n">dataProcessor</span><span class="p">.</span><span class="n">REDIS_SERVER</span><span class="p">)</span>
+		<span class="k">print</span> <span class="s">""</span>
+		<span class="k">print</span> <span class="s">"Connected to Redis successfully!"</span>
+
+		<span class="n">database</span> <span class="o">=</span> <span class="n">MySQLdb</span><span class="p">.</span><span class="n">connect</span><span class="p">(</span><span class="n">dataProcessor</span><span class="p">.</span><span class="n">MYSQL_IP_ADDRESS_SERVER</span><span class="p">,</span> <span class="n">dataProcessor</span><span class="p">.</span><span class="n">MYSQL_USER</span><span class="p">,</span> <span class="n">dataProcessor</span><span class="p">.</span><span class="n">MYSQL_PASSWORD</span><span class="p">,</span> <span class="n">dataProcessor</span><span class="p">.</span><span class="n">MYSQL_DATABASE_NAME</span><span class="p">)</span>
+		<span class="k">print</span> <span class="s">"Connected to MySQL successfully!"</span>
+		<span class="k">print</span> <span class="s">""</span>
+
+		<span class="n">cursor</span> <span class="o">=</span> <span class="n">database</span><span class="p">.</span><span class="n">cursor</span><span class="p">()</span>
+		<span class="n">select</span> <span class="o">=</span> <span class="s">'SELECT * FROM records WHERE location_id = 9 LIMIT 100'</span>
+		<span class="c1"># select = 'SELECT * FROM records WHERE location_id = 9'
+</span>		<span class="n">cursor</span><span class="p">.</span><span class="n">execute</span><span class="p">(</span><span class="n">select</span><span class="p">)</span>
+		<span class="n">data</span> <span class="o">=</span> <span class="n">cursor</span><span class="p">.</span><span class="n">fetchall</span><span class="p">()</span>
+
+		<span class="c1"># Clean redis before run again
+</span>		<span class="c1"># This is for test purpose
+</span>		<span class="n">r_redis</span><span class="p">.</span><span class="n">delete</span><span class="p">(</span><span class="s">"all_records"</span><span class="p">)</span>
+
+		<span class="c1"># Put all data from MySQL to Redis
+</span>		<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+		<span class="n">r_redis</span><span class="p">.</span><span class="n">rpush</span><span class="p">(</span><span class="s">"all_records"</span><span class="p">,</span> <span class="n">row</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+
+		<span class="c1"># Close connection to DB and Cursor
+</span>		<span class="n">cursor</span><span class="p">.</span><span class="n">close</span><span class="p">()</span>
+		<span class="n">database</span><span class="p">.</span><span class="n">close</span><span class="p">()</span>
+	
+	<span class="o">@</span><span class="nb">staticmethod</span>
+	<span class="k">def</span> <span class="nf">get_data_from_redis</span><span class="p">():</span>
+
+		<span class="n">r2_redis</span> <span class="o">=</span> <span class="n">redis</span><span class="p">.</span><span class="n">StrictRedis</span><span class="p">(</span><span class="n">dataProcessor</span><span class="p">.</span><span class="n">REDIS_SERVER</span><span class="p">)</span>
+
+		<span class="nb">list</span> <span class="o">=</span> <span class="p">[]</span>
+		<span class="nb">list</span> <span class="o">=</span> <span class="n">r2_redis</span><span class="p">.</span><span class="n">lrange</span><span class="p">(</span><span class="s">"all_records"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+
+		<span class="k">print</span> <span class="nb">list</span>
+		<span class="k">print</span> <span class="s">""</span>
+
+		<span class="k">print</span> <span class="s">"Size of list:"</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+		<span class="k">print</span> <span class="s">""</span>
+
+		<span class="n">word_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">word</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">list</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">line</span><span class="p">.</span><span class="n">split</span><span class="p">()]</span>
+		<span class="k">print</span> <span class="n">word_list</span>
+		<span class="k">print</span> <span class="s">""</span>
+
+		<span class="n">words_to_count</span> <span class="o">=</span> <span class="p">(</span><span class="n">word</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">word_list</span> <span class="k">if</span> <span class="n">word</span><span class="p">[:</span><span class="mi">1</span><span class="p">].</span><span class="n">isupper</span><span class="p">())</span>
+		<span class="n">top_ten</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">words_to_count</span><span class="p">)</span>
+
+		<span class="k">print</span> <span class="s">"Top 10 Most popular words:"</span>
+		<span class="k">print</span> <span class="n">top_ten</span><span class="p">.</span><span class="n">most_common</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span> <span class="s">"</span><span class="se">\n</span><span class="s">"</span>
+</code></pre></div></div>
+:ET

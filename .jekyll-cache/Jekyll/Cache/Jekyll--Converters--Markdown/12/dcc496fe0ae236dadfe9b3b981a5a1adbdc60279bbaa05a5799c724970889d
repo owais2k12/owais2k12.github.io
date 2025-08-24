@@ -1,0 +1,42 @@
+I"�<p>nginx安装版本为nginx-1.6.2.tar.gz，这个版本为目前最新的稳定版。</p>
+
+<p>安装之前需要安装pcre插件包，插件包版本为：pcre-8.36.tar.gz
+还有zlib库和ssl，通过yum安装即可，<code class="language-plaintext highlighter-rouge">yum -y install zlib* openssl openssl-devel</code>。</p>
+
+<p>源码安装遵循安装三部曲：<code class="language-plaintext highlighter-rouge">./configure ; make ; make install</code></p>
+
+<p>安装之前需要安装Develepment Tools环境，<code class="language-plaintext highlighter-rouge">yum -y groupinstall “Development Tools”</code>。</p>
+
+<p>其中nginx根据不同的用途安装如下插件包：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./configure --with-http_stub_status_module --with-http_image_filter_module --with-http_ssl_module --with-pcre=/pcre/path --add-module=/purge/path
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p>第一个是stub监控模块</p>
+  </li>
+  <li>
+    <p>第二个是图片处理模块，负责图片缩放</p>
+  </li>
+  <li>
+    <p>第三个是https模块</p>
+  </li>
+  <li>
+    <p>第四个是pcre模块</p>
+  </li>
+  <li>
+    <p>第五个是cache purge模块，需要下载，地址在:<a href="http://labs.frickle.com/files/">http://labs.frickle.com/files/</a></p>
+  </li>
+</ul>
+
+<p>隐藏nginx版本号：</p>
+
+<p>一、就nginx方面的调整，这里可以直接修改nginx的配置文件来隐藏：
+添加server_tokens off；</p>
+
+<p>二、如果想要把nginx也隐藏掉，需要编辑nginx源码中的src/core/nginx.h头文件nginx修改为Microsoft-IIS版本号改为7，修改后的截图如下</p>
+
+<p><img src="http://www.jack003.com/static/img/blog/nginx/safe.jpg" alt="safe" /></p>
+
+:ET
