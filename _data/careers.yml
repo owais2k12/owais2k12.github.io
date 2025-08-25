@@ -3,16 +3,19 @@
     i18n: cariad_se
   desc:
     detail: |
-      System Architect Interior Cabin Monitoring System:
-      • Led development and deployment of interior perception systems for driver and occupant monitoring across VW Group platforms
-      • Defined perception architecture and roadmaps, integrating deep learning models for gaze tracking, occupant classification
-      • Designed end-to-end pipelines for sensor data processing and neural network inference
-      • Architected scalable middleware for cross-platform deployment
-      
-      System Lead – Multi-Function Camera System:
-      • Led end-to-end development of intelligent Multi-Function Camera system
-      • Owned cross-domain system release coordination
-      • Managed milestone delivery aligned with BMG/DET targets
+     <strong> System Architect Interior Cabin Monitoring System:</strong>
+     <ul>
+      <li>Led development and deployment of interior perception systems for driver and occupant monitoring across VW Group platforms</li>
+      <li>Defined perception architecture and roadmaps, integrating deep learning models for gaze tracking, occupant classification</li>
+      <li>Designed end-to-end pipelines for sensor data processing and neural network inference</li>
+      <li>Architected scalable middleware for cross-platform deployment</li>
+     </ul>
+     <strong>System Lead – Multi-Function Camera System:</strong>
+     <ul>
+      <li>Led end-to-end development of intelligent Multi-Function Camera system</li>
+      <li>Owned cross-domain system release coordination</li>
+      <li>Managed milestone delivery aligned with BMG/DET targets</li>
+     </ul>
     i18n: cariad_se_desc
   date:
     detail: Aug 2022 - Present
@@ -27,11 +30,13 @@
     i18n: cariad_cn
   desc:
     detail: |
-      • Program Management - Led ECU development programs, managing SW/HW release cycles
-      • Requirements Engineering - Defined system requirements for ADAS Domain Controllers
-      • Hardware Development - Directed ECU hardware interfaces and design reviews
-      • Software Development - Oversaw AUTOSAR CP/AP base software development
-      • Testing & Integration - Managed validation activities and supplier test campaigns
+      <ul>
+      <li>Program Management - Led ECU development programs, managing SW/HW release cycles</li>
+      <li>Requirements Engineering - Defined system requirements for ADAS Domain Controllers</li>
+      <li>Hardware Development - Directed ECU hardware interfaces and design reviews</li>
+      <li>Software Development - Oversaw AUTOSAR CP/AP base software development</li>
+      <li>Testing & Integration - Managed validation activities and supplier test campaigns</li>
+      </ul>
     i18n: cariad_cn_desc
   date:
     detail: Jan 2021 - Jul 2022
@@ -46,9 +51,11 @@
     i18n: vcic
   desc:
     detail: |
-      • Defined system and ECU-level requirements for Top View and Advanced Parking features
-      • Coordinated stakeholder inputs across system architecture teams
-      • Led integration of new communication signals for ADAS Domain Controller
+      <ul>
+      <li>Defined system and ECU-level requirements for Top View and Advanced Parking features</li>
+      <li>Coordinated stakeholder inputs across system architecture teams</li>
+      <li>Led integration of new communication signals for ADAS Domain Controller</li>
+      </ul>
     i18n: vcic_desc
   date:
     detail: Jun 2020 - Dec 2020
@@ -63,11 +70,13 @@
     i18n: hirain
   desc:
     detail: |
-      • Developed TopView system with multi-camera setup and calibration
-      • Built deep learning pipeline for semantic segmentation
-      • Designed DNN for free space detection and indoor localization
-      • Created traffic light distance estimation algorithm
-      • Integrated multi-object tracking systems
+      <ul>
+      <li>Developed TopView system with multi-camera setup and calibration</li>
+      <li>Built deep learning pipeline for semantic segmentation</li>
+      <li>Designed DNN for free space detection and indoor localization</li>
+      <li>Created traffic light distance estimation algorithm</li>
+      <li>Integrated multi-object tracking systems</li>
+      </ul>
     i18n: hirain_desc
   date:
     detail: Jul 2018 - May 2020
@@ -82,9 +91,11 @@
     i18n: baic
   desc:
     detail: |
-      • Developed online calibration for 9-DOF stereo vision system
-      • Created CNN for UAV landing marker detection
-      • Designed multi-modal sensor fusion system for autonomous vehicles
+      <ul>
+      <li>Developed online calibration for 9-DOF stereo vision system</li>
+      <li>Created CNN for UAV landing marker detection</li>
+      <li>Designed multi-modal sensor fusion system for autonomous vehicles</li>
+      </ul>
     i18n: baic_desc
   date:
     detail: Sep 2016 - Jun 2018
@@ -99,8 +110,10 @@
     i18n: vr_lab
   desc:
     detail: |
-      • Developed 6DOF SUV driving simulator with real-time rendering
-      • Integrated VR system with motion platform for high-fidelity simulation
+      <ul>
+      <li>Developed 6DOF SUV driving simulator with real-time rendering</li>
+      <li>Integrated VR system with motion platform for high-fidelity simulation</li>
+      </ul>
     i18n: vr_lab_desc
   date:
     detail: Oct 2015 - Jul 2016
