@@ -8,7 +8,10 @@
 
 - name: 'First/Last Mile Innovation Challenge'
   i18n: 'skoda_challenge'
-  img: 'static/img/awards/skoda_challenge.JPG'
+  images: 
+    - '/static/img/awards/skoda_challenge.JPG'
+    - '/static/img/awards/skoda_challenge2.JPG'
+
   desc: 'Won Skoda''s Innovative First/Last Mile Challenge by developing unique solutions for urban mobility connectivity.'
   organization: 'Skoda'
   award_type: 'Winner'
