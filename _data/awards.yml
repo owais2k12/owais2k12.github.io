@@ -1,6 +1,8 @@
 - name: 'Smart Mobility Challenge Winner'
   i18n: 'honda_hackathon'
   img: '/static/img/awards/honda_hackathon.JPG'
+  additional_images:
+    - '/static/img/awards/honda_hackathon1.JPG'
   desc: 'Winner of Honda Smart Mobility Hackathon, developing innovative solutions for future mobility challenges.'
   organization: 'Honda'
   award_type: 'First Place'
@@ -9,7 +11,9 @@
 - name: 'First/Last Mile Innovation Challenge'
   i18n: 'skoda_challenge'
   img: '/static/img/awards/skoda_challenge.JPG'
-
+  additional_images:
+    - '/static/img/awards/skoda_challenge2.jpg'
+    - '/static/img/awards/skoda_challenge3.jpg'
   desc: 'Won Skoda''s Innovative First/Last Mile Challenge by developing unique solutions for urban mobility connectivity.'
   organization: 'Skoda'
   award_type: 'Winner'
@@ -18,6 +22,8 @@
 - name: 'Automated Valet Parking Challenge'
   i18n: 'bosch_avp'
   img: '/static/img/awards/bosch_avp.JPG'
+  additional_images:
+    - '/static/img/awards/bosch_avp2.jpg'
   desc: 'First place in Bosch''s Automated Valet Parking Challenge, developing advanced autonomous parking solutions.'
   organization: 'Bosch'
   award_type: 'Winner'
@@ -26,6 +32,9 @@
 - name: 'Call For Code Challenge'
   i18n: 'angelhack_ibm'
   img: '/static/img/awards/angelhack_ibm.JPG'
+  additional_images:
+    - '/static/img/awards/angelhack_ibm2.JPG'
+    - '/static/img/awards/angelhack_ibm3.JPG'
   desc: 'Winner of Angelhack Call For Code Challenge, creating innovative solutions using IBM technologies.'
   organization: 'Angelhack/IBM'
   award_type: 'Winner'
@@ -33,24 +42,29 @@
 
 - name: 'International Robotics Challenge'
   i18n: 'mbzirc'
-  img: '/static/img/awards/mbzirc.JPG'
+  img: '/static/img/awards/MBZIRC_1.jpg'
+  additional_images:
+    - '/static/img/awards/MBZIRC_2.jpg'
+    - '/static/img/awards/MBZIRC_3.jpg'
   desc: 'Winner of the MBZIRC International Robotics Challenge, demonstrating excellence in autonomous robotics systems.'
   organization: 'MBZIRC'
   award_type: 'First Place'
   icon: 'fa-trophy'
 
-- name: 'Graduate Scholarship'
-  i18n: 'cgs_scholarship'
-  img: 'static/img/awards/cgs_scholarship.JPG'
-  desc: 'Awarded prestigious CGS Graduate Scholarship for academic excellence and research potential.'
-  organization: 'CGS'
-  award_type: 'Awardee'
-  icon: 'fa-graduation-cap'
-
-- name: 'MENA Scholarship'
-  i18n: 'coca_cola_scholarship'
-  img: 'static/img/awards/coca_cola_scholarship.JPG'
-  desc: 'Finalist in the competitive Coca Cola MENA Scholarship program.'
-  organization: 'USEFP'
-  award_type: 'Finalist'
+- name: 'Best Technical Paper Award'
+  i18n: 'top_paper'
+  img: '/static/img/awards/Top_paper_award.PNG'
+  desc: 'Awarded Best Technical Paper for groundbreaking research contribution in Advanced Autonomous Driving.'
+  organization: 'Journal of Field Robotics'
+  award_type: 'Winner'
   icon: 'fa-award'
+
+- name: 'Startup Grind Recognition'
+  i18n: 'startup_grind'
+  img: '/static/img/awards/startupgrind_1.JPG'
+  additional_images:
+    - '/static/img/awards/startupgrind_2.JPG'
+  desc: 'Recognition at Startup Grind for innovative entrepreneurial achievements in automotive technology.'
+  organization: 'Startup Grind'
+  award_type: 'Recognition'
+  icon: 'fa-lightbulb'

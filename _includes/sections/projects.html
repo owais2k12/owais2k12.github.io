@@ -17,16 +17,25 @@
             {% else %}
             <div class="col-sm-6 wow {% if loopindex == 1 %} fadeInLeft {% else %} fadeInRight {% endif %}">
             {% endif %}
-              <div class="team-member">
-                  <!-- Debug image path -->
-                  <p></p>
-                  <img src="{{ project.img | prepend: site.baseurl }}" class="img-responsive img-circle img-small" alt="">
-                  <h4><span class="navy">{{ project.name }}</span></h4>
-                  <p><strong>{{ project.organization }} - {{ project.award_type }}</strong></p>
-                  <p><span data-i18n="projects.{{ project.i18n }}">{{ project.desc }}</span></p>
-                  <ul class="list-inline">
-                      <li><i class="fa {{ project.icon }} fa-2x"></i></li>
-                  </ul>
+              <div class="team-member award-item">
+                  <div class="award-image-gallery">
+                      <img src="{{ project.img | prepend: site.baseurl }}" class="img-responsive main-image" alt="{{ project.name }}">
+                      {% if project.additional_images %}
+                      <div class="additional-images">
+                          {% for additional_img in project.additional_images limit:4 %}
+                          <img src="{{ additional_img | prepend: site.baseurl }}" class="img-responsive thumbnail" alt="{{ project.name }} additional image">
+                          {% endfor %}
+                      </div>
+                      {% endif %}
+                  </div>
+                  <div class="award-content">
+                      <h4>{{ project.name }}</h4>
+                      <p class="award-organization">
+                          <i class="fa {{ project.icon }}"></i>
+                          <strong>{{ project.organization }} · {{ project.award_type }}</strong>
+                      </p>
+                      <p class="award-description">{{ project.desc }}</p>
+                  </div>
               </div>
           </div>
       {% endfor %}
