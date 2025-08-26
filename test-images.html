@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Images</title>
+    <style>
+        .test-image {
+            width: 100%;
+            height: 300px;
+            margin-bottom: 20px;
+            background-size: cover;
+            background-position: center;
+        }
+        .test-direct {
+            width: 100%;
+            max-height: 300px;
+            margin-bottom: 20px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <h2>Testing Background Images:</h2>
+    <div class="test-image" style="background-image: url('static/img/landing/tech_header_1.jpg')"></div>
+    <div class="test-image" style="background-image: url('static/img/landing/tech_header_2.webp')"></div>
+    <div class="test-image" style="background-image: url('static/img/landing/tech_header_3.jpg')"></div>
+
+    <h2>Testing Direct Images:</h2>
+    <img src="static/img/landing/tech_header_1.jpg" class="test-direct" alt="Tech Header 1">
+    <img src="static/img/landing/tech_header_2.webp" class="test-direct" alt="Tech Header 2">
+    <img src="static/img/landing/tech_header_3.jpg" class="test-direct" alt="Tech Header 3">
+</body>
+</html>

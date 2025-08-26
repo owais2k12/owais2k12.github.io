@@ -1,0 +1,76 @@
+.landing-page .header-back {
+    height: 470px;
+    width: 100%;
+    background-size: cover !important;
+    background-position: center !important;
+    position: relative;
+}
+
+.landing-page .header-back::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.landing-page .header-back.one {
+    background: url('../img/landing/tech_header_1.jpg') no-repeat;
+}
+
+.landing-page .header-back.two {
+    background: url('../img/landing/tech_header_2.webp') no-repeat;
+}
+
+.landing-page .header-back.three {
+    background: url('../img/landing/tech_header_3.jpg') no-repeat;
+}
+
+/* Tech overlay effects */
+.landing-page .header-back::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        linear-gradient(45deg, rgba(0,150,255,0.1) 0%, rgba(0,0,0,0) 100%),
+        radial-gradient(circle at center, rgba(255,255,255,0.05) 0%, rgba(0,0,0,0) 70%);
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* Animated tech grid */
+.landing-page .header-back .tech-grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+    z-index: 3;
+    animation: gridMove 20s linear infinite;
+}
+
+@keyframes gridMove {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(50px);
+    }
+}
+
+/* Make carousel content visible over the overlays */
+.landing-page .carousel-caption {
+    position: relative;
+    z-index: 4;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}

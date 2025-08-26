@@ -6703,15 +6703,67 @@ body.landing-page {
 .landing-page .header-back {
     height: 470px;
     width: 100%;
+    background-size: cover !important;
+    background-position: center !important;
+    position: relative;
 }
 .landing-page .header-back.one {
-    background: url('../img/landing/header_one.jpg');
+    background: url('../img/landing/tech_header_1.jpg') no-repeat;
 }
 .landing-page .header-back.two {
-    background: url('../img/landing/header_two.jpg');
+    background: url('../img/landing/tech_header_2.webp') no-repeat;
 }
 .landing-page .header-back.three {
-    background: url('../img/landing/header_three.jpg');
+    background: url('../img/landing/tech_header_3.jpg') no-repeat;
+}
+
+/* Tech overlay effects */
+.landing-page .header-back::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.landing-page .header-back .tech-grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+    z-index: 2;
+    animation: gridMove 20s linear infinite;
+}
+
+.landing-page .header-back::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        linear-gradient(45deg, rgba(0,150,255,0.1) 0%, rgba(0,0,0,0) 100%),
+        radial-gradient(circle at center, rgba(255,255,255,0.05) 0%, rgba(0,0,0,0) 70%);
+    z-index: 2;
+    pointer-events: none;
+}
+
+@keyframes gridMove {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 50px 50px;
+    }
 }
 .landing-page .carousel {
     height: 470px;
@@ -6732,8 +6784,7 @@ body.landing-page {
 }
 .landing-page .carousel-fade .carousel-inner .item {
     opacity: 0;
-    -webkit-transition-property: opacity;
-    transition-property: opacity;
+    transition: opacity 0.8s ease-in-out;
 }
 .landing-page .carousel-fade .carousel-inner .active {
     opacity: 1;
@@ -6743,10 +6794,14 @@ body.landing-page {
     left: 0;
     opacity: 0;
     z-index: 1;
+    transform: scale(1.05);
+    transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
 }
 .landing-page .carousel-fade .carousel-inner .next.left,
 .landing-page .carousel-fade .carousel-inner .prev.right {
     opacity: 1;
+    transform: scale(1);
+    transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
 }
 .landing-page .carousel-fade .carousel-control {
     z-index: 2;

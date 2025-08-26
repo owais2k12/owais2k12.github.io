@@ -1,0 +1,83 @@
+/* Tech-themed background styles */
+.header-back {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    transition: all 0.5s ease;
+}
+
+.header-back.one {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)),
+                      url('../img/landing/header_one.jpg');
+}
+
+.header-back.two {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)),
+                      url('../img/landing/header_two.jpg');
+}
+
+.header-back.three {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)),
+                      url('../img/landing/header_three.jpg');
+}
+
+/* Section backgrounds */
+.section-tech-bg {
+    position: relative;
+    overflow: hidden;
+}
+
+.section-tech-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('../img/landing/section_bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    opacity: 0.05;
+    z-index: -1;
+}
+
+/* Animated tech background */
+.tech-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        linear-gradient(to right, rgba(51, 122, 183, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(51, 122, 183, 0.05) 1px, transparent 1px);
+    background-size: 20px 20px;
+    z-index: -1;
+    animation: patternMove 20s linear infinite;
+}
+
+@keyframes patternMove {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 40px 40px;
+    }
+}
+
+/* Tech circles background */
+.tech-circles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 10% 20%, rgba(51, 122, 183, 0.03) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(51, 122, 183, 0.03) 0%, transparent 20%),
+                radial-gradient(circle at 50% 50%, rgba(51, 122, 183, 0.03) 0%, transparent 30%);
+    z-index: -1;
+}
