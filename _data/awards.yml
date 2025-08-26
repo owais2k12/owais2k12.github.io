@@ -8,9 +8,7 @@
 
 - name: 'First/Last Mile Innovation Challenge'
   i18n: 'skoda_challenge'
-  images: 
-    - '/static/img/awards/skoda_challenge.JPG'
-    - '/static/img/awards/skoda_challenge2.JPG'
+  img: '/static/img/awards/skoda_challenge.JPG'
 
   desc: 'Won Skoda''s Innovative First/Last Mile Challenge by developing unique solutions for urban mobility connectivity.'
   organization: 'Skoda'
@@ -19,7 +17,7 @@
 
 - name: 'Automated Valet Parking Challenge'
   i18n: 'bosch_avp'
-  img: 'static/img/awards/bosch_avp.JPG'
+  img: '/static/img/awards/bosch_avp.JPG'
   desc: 'First place in Bosch''s Automated Valet Parking Challenge, developing advanced autonomous parking solutions.'
   organization: 'Bosch'
   award_type: 'Winner'
@@ -27,7 +25,7 @@
 
 - name: 'Call For Code Challenge'
   i18n: 'angelhack_ibm'
-  img: 'static/img/awards/angelhack_ibm.JPG'
+  img: '/static/img/awards/angelhack_ibm.JPG'
   desc: 'Winner of Angelhack Call For Code Challenge, creating innovative solutions using IBM technologies.'
   organization: 'Angelhack/IBM'
   award_type: 'Winner'
@@ -35,7 +33,7 @@
 
 - name: 'International Robotics Challenge'
   i18n: 'mbzirc'
-  img: 'static/img/awards/mbzirc.JPG'
+  img: '/static/img/awards/mbzirc.JPG'
   desc: 'Winner of the MBZIRC International Robotics Challenge, demonstrating excellence in autonomous robotics systems.'
   organization: 'MBZIRC'
   award_type: 'First Place'

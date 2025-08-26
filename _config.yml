@@ -40,9 +40,9 @@ sections:
     tpl: 'skills.html'
     css: 'team'
 
-  - id: 'projects'
-    i18n: 'nav.projects'
-    name: 'Projects'
+  - id: 'awards'
+    i18n: 'nav.awards'
+    name: 'Awards & Honors'
     tpl: 'projects.html'
     css: 'project'
 

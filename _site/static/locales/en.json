@@ -6,7 +6,7 @@
     "home": "Home",
     "about_me": "About",
     "skills": "Skills",
-    "projects": "Honors/Awards",
+    "projects": "Projects",
     "publications": "Publications",
     "career": "Career",
     "blog": "Blog",
@@ -20,7 +20,7 @@
     "my_skills": "My Skills"
   },
   "projects":{
-    "my_projects": "Honors/Awards/Hackathons",
+    "my_projects": "My Projects",
     "saplatform": "Saplatform is a automated service for operations, it has asset management, project release, database access function, it can control mass servers.",
     "jalpc": "Jalpc is a simple, beautiful and swift theme for Jekyll. It has comprehensive function, it can be easily used and edited. It's adapted for many kinds devices.",
     "angularjs": "It is a web font application written by Angularjs and deployed by Jekyll on github (gh-pages), the backend platform is Leancloud, you can use Parse as well.",
