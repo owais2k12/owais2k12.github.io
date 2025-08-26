@@ -3,18 +3,19 @@
     i18n: cariad_se
   desc:
     detail: |
-     <strong> System Architect Interior Cabin Monitoring System:</strong>
+     <strong>System Architect–Interior Cabin Monitoring System:</strong>
      <ul>
-      <li>Led development and deployment of interior perception systems for driver and occupant monitoring across VW Group platforms</li>
-      <li>Defined perception architecture and roadmaps, integrating deep learning models for gaze tracking, occupant classification</li>
-      <li>Designed end-to-end pipelines for sensor data processing and neural network inference</li>
-      <li>Architected scalable middleware for cross-platform deployment</li>
+      <li>Leading end-to-end development of in-cabin camera software stack—including driver integration, image acquisition, control interfaces, and pre-processing pipelines optimized for neural network inference</li>
+      <li>Defined and owned software KPIs, system requirements, and modular architecture; provided technical leadership throughout design, development, and validation of camera-related components</li>
+      <li>Led cross-functional collaboration between perception, embedded, and platform teams to ensure seamless integration and real-time performance under automotive constraints</li>
+      <li>Architected and implemented scalable, hardware-agnostic middleware to enable efficient cross-platform deployment across various ADAS compute environments (ARM, x86, GPU, embedded SoCs)</li>
      </ul>
      <strong>System Lead – Multi-Function Camera System:</strong>
      <ul>
-      <li>Led end-to-end development of intelligent Multi-Function Camera system</li>
-      <li>Owned cross-domain system release coordination</li>
-      <li>Managed milestone delivery aligned with BMG/DET targets</li>
+      <li>As a task force lead, spearheaded the analysis and resolution of stability and diagnostics issues in the Multi-Function Camera system, ensuring optimal performance and reliability</li>
+      <li>Collaborated with cross-functional teams to identify root causes and implement corrective actions, significantly improving system diagnostics and fault tolerance</li>
+      <li>Managed milestone delivery aligned with BMG/DET targets, successfully delivering results and releases tailored to each vehicle cluster</li>
+      <li>Co-created comprehensive documentation and training materials to support ongoing maintenance and future enhancements of the Multi-Function Camera system</li>
      </ul>
     i18n: cariad_se_desc
   date:
@@ -31,10 +32,10 @@
   desc:
     detail: |
       <ul>
-      <li>Program Management - Led ECU development programs, managing SW/HW release cycles</li>
+      <li>Program Management - Led ECU development programs, managing SW/HW development, deployment and validation cycles</li>
       <li>Requirements Engineering - Defined system requirements for ADAS Domain Controllers</li>
       <li>Hardware Development - Directed ECU hardware interfaces and design reviews</li>
-      <li>Software Development - Oversaw AUTOSAR CP/AP base software development</li>
+      <li>Software Development - Designed AUTOSAR CP/AP base software development together with team of 7 colleagues</li>
       <li>Testing & Integration - Managed validation activities and supplier test campaigns</li>
       </ul>
     i18n: cariad_cn_desc

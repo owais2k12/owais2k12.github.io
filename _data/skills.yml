@@ -11,28 +11,28 @@
   percentage: 85
   category: programming
 
-- name: LaTeX
+- name: Bash/Shell Scripting
   percentage: 80
   category: programming
 
 # Tools & Platforms
-- name: Jira/Confluence
+- name: Docker
   percentage: 95
+  category: tools
+
+- name: Kubernetes
+  percentage: 90
   category: tools
 
 - name: Git/Version Control
   percentage: 90
   category: tools
 
-- name: Docker
+- name: Jenkins
   percentage: 85
   category: tools
 
-- name: Bazel
-  percentage: 85
-  category: tools
-
-- name: DOORs/Codebeamer
+- name: ROS
   percentage: 90
   category: tools
 
@@ -46,28 +46,36 @@
   category: technical
 
 - name: Deep Learning
+  percentage: 90
+  category: technical
+
+- name: Embedded Systems
   percentage: 85
   category: technical
 
-- name: System Architecture
-  percentage: 95
+- name: Sensor Fusion
+  percentage: 85
   category: technical
 
 # Frameworks & Libraries
-- name: ROS
-  percentage: 90
-  category: frameworks
-
 - name: OpenCV
   percentage: 95
   category: frameworks
 
 - name: PyTorch
+  percentage: 90
+  category: frameworks
+
+- name: TensorFlow
   percentage: 85
   category: frameworks
 
-- name: AUTOSAR
+- name: NumPy
   percentage: 90
+  category: frameworks
+
+- name: Scikit-learn
+  percentage: 85
   category: frameworks
 
 # Standards & Methodologies
@@ -81,6 +89,10 @@
 
 - name: Agile/Scrum
   percentage: 90
+  category: standards
+
+- name: DevOps
+  percentage: 85
   category: standards
 
 # Languages

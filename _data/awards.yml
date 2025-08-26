@@ -3,7 +3,7 @@
   img: '/static/img/awards/honda_hackathon.JPG'
   additional_images:
     - '/static/img/awards/honda_hackathon1.JPG'
-  desc: 'Winner of Honda Smart Mobility Hackathon, developing innovative solutions for future mobility challenges.'
+  desc: 'Winner of Honda Smart Mobility Hackathon, developing innovative solutions for future mobility challenges. Participated to push the boundaries of creativity and problem-solving in mobility, showcasing the cool intersection of technology and real-world impact.'
   organization: 'Honda'
   award_type: 'First Place'
   icon: 'fa-trophy'
@@ -14,7 +14,7 @@
   additional_images:
     - '/static/img/awards/skoda_challenge2.jpg'
     - '/static/img/awards/skoda_challenge3.jpg'
-  desc: 'Won Skoda''s Innovative First/Last Mile Challenge by developing unique solutions for urban mobility connectivity.'
+  desc: 'Won Skoda''s Innovative First/Last Mile Challenge by developing unique solutions for urban mobility connectivity. Participated to explore cutting-edge ideas in urban mobility and to collaborate with like-minded innovators.'
   organization: 'Skoda'
   award_type: 'Winner'
   icon: 'fa-trophy'
@@ -24,7 +24,7 @@
   img: '/static/img/awards/bosch_avp.JPG'
   additional_images:
     - '/static/img/awards/bosch_avp2.jpg'
-  desc: 'First place in Bosch''s Automated Valet Parking Challenge, developing advanced autonomous parking solutions.'
+  desc: 'First place in Bosch''s Automated Valet Parking Challenge, developing advanced autonomous parking solutions. Participated to tackle real-world challenges in autonomous systems and to demonstrate technical expertise in a competitive environment.'
   organization: 'Bosch'
   award_type: 'Winner'
   icon: 'fa-trophy'
@@ -35,7 +35,7 @@
   additional_images:
     - '/static/img/awards/angelhack_ibm2.JPG'
     - '/static/img/awards/angelhack_ibm3.JPG'
-  desc: 'Winner of Angelhack Call For Code Challenge, creating innovative solutions using IBM technologies.'
+  desc: 'Winner of Angelhack Call For Code Challenge, creating innovative solutions using IBM technologies. Participated to leverage cutting-edge tools and to contribute to impactful solutions addressing global challenges.'
   organization: 'Angelhack/IBM'
   award_type: 'Winner'
   icon: 'fa-trophy'
@@ -46,7 +46,7 @@
   additional_images:
     - '/static/img/awards/MBZIRC_2.jpg'
     - '/static/img/awards/MBZIRC_3.jpg'
-  desc: 'Winner of the MBZIRC International Robotics Challenge, demonstrating excellence in autonomous robotics systems.'
+  desc: 'Winner of the MBZIRC International Robotics Challenge, demonstrating excellence in autonomous robotics systems. Participated to push the limits of robotics innovation and to compete with the best minds in the field.'
   organization: 'MBZIRC'
   award_type: 'First Place'
   icon: 'fa-trophy'
@@ -54,7 +54,7 @@
 - name: 'Best Technical Paper Award'
   i18n: 'top_paper'
   img: '/static/img/awards/Top_paper_award.PNG'
-  desc: 'Awarded Best Technical Paper for groundbreaking research contribution in Advanced Autonomous Driving.'
+  desc: 'Awarded Best Technical Paper for groundbreaking research contribution in Advanced Autonomous Driving. Participated to share innovative research and to inspire advancements in the field of autonomous systems.'
   organization: 'Journal of Field Robotics'
   award_type: 'Winner'
   icon: 'fa-award'
@@ -64,7 +64,7 @@
   img: '/static/img/awards/startupgrind_1.JPG'
   additional_images:
     - '/static/img/awards/startupgrind_2.JPG'
-  desc: 'Recognition at Startup Grind for innovative entrepreneurial achievements in automotive technology.'
+  desc: 'Recognition at Startup Grind for innovative entrepreneurial achievements in automotive technology. Participated to showcase entrepreneurial spirit and to connect with a global community of innovators.'
   organization: 'Startup Grind'
   award_type: 'Recognition'
   icon: 'fa-lightbulb'
